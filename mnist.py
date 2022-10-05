@@ -130,28 +130,28 @@ def test(model, batch: int, dataloader):
     # Calculate the overall accuracy.
     return correct / (len(dataloader) * batch) * 100
 
-def parameterTextGenerator(accuracy):
-    #Create text file to store parameter data
+
+def parameter_text_generator(accuracy):
+    # Create text file to store parameter data.
     f = open(f"{os.getcwd()}/ModelParameters/" + args["name"] + ".txt", "w")
-
-    #Write parameters to text file
-    f.write("Accuracy Rate & Device: "+ str(accuracy) + "\n" +
-    "Name of the model: "  + str(args["name"]) + "\n" +
-    "Number of training epochs: " + str(args["epoch"]) + "\n"  +
-    "Training and testing batch size: " + str(args["batch"]) + "\n"  +
-    "Count image labels in the MNIST dataset: " + str(args["count"]) + "\n" +
-    "Minimum rescaling size of training data: " + str(args["min"]) + "\n"  +
-    "Maximum rescaling size of training data: " + str(args["max"]) + "\n"  +
-    "Maximum rotation of training data: " + str(args["rot"]) + "\n")
-
-    #timestamp for text file
+    # Write parameters to text file
+    f.write("Accuracy Rate & Device: " + str(accuracy) + "\n" +
+            "Name of the model: " + str(args["name"]) + "\n" +
+            "Number of training epochs: " + str(args["epoch"]) + "\n" +
+            "Training and testing batch size: " + str(args["batch"]) + "\n" +
+            "Count image labels in the MNIST dataset: " + str(args["count"]) + "\n" +
+            "Minimum rescaling size of training data: " + str(args["min"]) + "\n" +
+            "Maximum rescaling size of training data: " + str(args["max"]) + "\n" +
+            "Maximum rotation of training data: " + str(args["rot"]) + "\n")
+    # Timestamp for text file.
     f.write(str(datetime.now()) + "\n")
-    #writes whether the model was loaded or not to text file
-    if args["load"] == True:
-        f.write("\n Name of Model Loaded : "+ args["load"])    
-    else : 
-        f.write("Model is an original.") 
-        f.close()
+    # Writes whether the model was loaded or not to text file.
+    if args["load"]:
+        f.write("\n Name of Model Loaded : " + args["load"])
+    else:
+        f.write("Model is an original.")
+    f.close()
+
 
 def main(name: str, epochs: int, batch: int, count: bool, load: bool, minimum: float, maximum: float, rot: float):
     """
@@ -282,8 +282,9 @@ def main(name: str, epochs: int, batch: int, count: bool, load: bool, minimum: f
     # Ensure Folder to save parameters exists
     if not os.path.exists(f"{os.getcwd()}/ModelParameters"):
         os.mkdir(f"{os.getcwd()}/ModelParameters")
-    #Save Model Parameters & Accuracy
-    parameterTextGenerator({accuracy})
+    # Save model parameters and accuracy.
+    parameter_text_generator({accuracy})
+
 
 if __name__ == '__main__':
     desc = "MNIST Deep Learning\n-------------------\nTrain and test models on the MNIST dataset."
