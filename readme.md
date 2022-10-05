@@ -2,6 +2,7 @@
 
 - [Setup](#setup "Setup")
 - [Usage](#usage "Usage")
+- [Limitations](#limitations "Limitations")
 - [References](#references "References")
 
 # Setup
