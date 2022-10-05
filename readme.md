@@ -26,7 +26,7 @@
 2. Follow [setup](#setup "Setup") steps.
 3. "model_builder.py" is where you can build your model architecture.
    1. Since we are working with the MNIST dataset, the input is always 1 channel 28x28, and the final output needs to be 10.
-4. In the cloned/downloaded directory, run: tensorboard --logdir="runs"
+4. In the cloned/downloaded directory, run: **tensorboard --logdir="runs"** or **python -m tensorboard.main --logdir=[PATH_TO_LOGDIR]**
    1. This will allow you to open TensorBoard in your browser which by default is usually at [http://localhost:6006](http://localhost:6006 "Tensorboard").
 5. Run "mnist.py" with optional run parameters.
    1. -n, --name - Name of the model. Defaults to "Model".
@@ -37,8 +37,12 @@
    6. --min - Minimum rescaling size of training data. Defaults to 0.
    7. --max - Maximum rescaling size of training data. Defaults to 0.
    8. -r, --rot - Maximum rotation of training data. Defaults to 0.
-6. Once done, the model will be saved into the "Models" folder with the name it was given, a graph of its architecture will be in the "Graphs" folder, and TensorBoard data of it in the "runs" folder.
-   1. Note if this run produced a worse accuracy than a previous run which had the same name, it will not be saved to preserve the best model.
+6. Once done, the model('s) :
+   1. Will be saved with the name as it given in the "Models" folder.
+   2. Architecture will be saved as a graph in the "Graphs" folder.
+   3. Parameters and accuracy will be saved with the same model name in the "ModelParameters" folder. 
+   4. TensorBoard data will be saved in the "runs" folder.
+   - Note if this run produced a worse accuracy than a previous run which had the same name, it will not be saved to preserve the best model.
 
 # Limitations
 
