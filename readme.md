@@ -35,9 +35,10 @@
    3. -b, --batch - Training and testing batch size. Defaults to 64.
    4. -l, --load - Load the model with the given name and test it.
    5. -c, --count - Count image labels in the MNIST dataset.
-   6. --min - Minimum rescaling size of training data. Defaults to 0.
-   7. --max - Maximum rescaling size of training data. Defaults to 0.
-   8. -r, --rot - Maximum rotation of training data. Defaults to 0.
+   6. -a, --attempts - The amount of times to try the training. Default to 1.
+   7. --min - Minimum rescaling size of training data. Defaults to 0.
+   8. --max - Maximum rescaling size of training data. Defaults to 0.
+   9. -r, --rot - Maximum rotation of training data. Defaults to 0.
 6. Once done, the model:
    1. Will be saved with the name as it given in the "Models" folder.
    2. Architecture will be saved as a graph in the "Graphs" folder.
@@ -52,3 +53,4 @@
 # References
 
 - Initial implementation based on [this video](https://www.youtube.com/watch?v=9Bxf9voEbMg "YouTube Video") for initial PyTorch setup and running on the GPU if available.
+- Remaining information on setting up convolutional neural networks was done from reading the official PyTorch documentation, starting from [this tutorial](https://pytorch.org/tutorials/beginner/blitz/cifar10_tutorial.html "PyTorch Training a Classifier").

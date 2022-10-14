@@ -1,0 +1,10 @@
+Accuracy Rate & Device: {tensor(98.6365, device='cuda:0')}
+Name of the model: Model
+Number of training epochs: 5
+Training and testing batch size: 64
+Count image labels in the MNIST dataset: False
+Minimum rescaling size of training data: 1
+Maximum rescaling size of training data: 1
+Maximum rotation of training data: 0
+2022-10-13 23:36:41.755873
+Model is an original.
