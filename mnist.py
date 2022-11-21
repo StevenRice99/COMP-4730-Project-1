@@ -171,7 +171,7 @@ def main(name: str, epochs: int, batch: int, count: bool, load: bool, mini: floa
     if name == "Current":
         print("Cannot name the model 'Current' as that name is used for the current TensorBoard run.")
         return
-    print(f"Running on GPU with CUDA {torch.version.cuda}" if f"{torch.cuda.is_available()}." else "Running on CPU.")
+    print(f"Running on GPU with CUDA {torch.version.cuda}." if torch.cuda.is_available() else "Running on CPU.")
     if load or att < 1:
         att = 1
     for attempt in range(0, att):
@@ -222,6 +222,7 @@ def main(name: str, epochs: int, batch: int, count: bool, load: bool, mini: floa
         if no_model:
             model = NeuralNetwork()
         dataloader = DataLoader(training_data, batch_size=batch, shuffle=True)
+        print(len(dataloader.dataset))
         # Generate a sample image of the training data.
         data_image(dataloader, writer, 'Training Sample')
         if no_model and epochs > 0:
@@ -284,7 +285,6 @@ def main(name: str, epochs: int, batch: int, count: bool, load: bool, mini: floa
         if os.path.exists(f"{os.getcwd()}/runs/{name}"):
             shutil.rmtree(f"{os.getcwd()}/runs/{name}")
         os.rename(f"{os.getcwd()}/runs/Current", f"{os.getcwd()}/runs/{name}")
-
         # Ensure Folder to save parameters exists
         if not os.path.exists(f"{os.getcwd()}/ModelParameters"):
             os.mkdir(f"{os.getcwd()}/ModelParameters")
