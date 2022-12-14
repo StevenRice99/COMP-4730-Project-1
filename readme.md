@@ -8,7 +8,7 @@
 # Setup
 
 1. Install [Python](https://www.python.org "Python").
-   1. Python 3.7.10 was used for this project's creation, but any newer version should work.
+   1. Python 3.10.7 was used for this project's creation, but any newer version should work.
 2. Install required Python packages. If unfamiliar with Python, "pip" comes with standard Python installations, and you can run "pip *package*" to install a package.
    1. [PyTorch](https://pytorch.org "PyTorch") and TorchVision.
       1. It is recommended you visit [PyTorch's get started page](https://pytorch.org/get-started/locally "PyTorch Get Started") which will allow you to select to install CUDA support if you have an Nvidia GPU. This will give you a command you can copy and run to install PyTorch, TorchVision, and TorchAudio, but feel free to remove TorchAudio from the command as it is not needed.
